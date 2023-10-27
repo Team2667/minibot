@@ -3,6 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot;
+import frc.robot.commands.DefaultDriveCommand;
 import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -13,13 +14,14 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final DriveTrain driveTrain = new DriveTrain();
+  private final DefaultDriveCommand drivecommand;
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final CommandXboxController xbvCommandXboxController =
       new CommandXboxController(Constants.kDriverControllerPort);
 
   public void createCommands(){
-
+drivecommand = new DefaultDriveCommand(driveTrain, xbvCommandXboxController);
   }
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */

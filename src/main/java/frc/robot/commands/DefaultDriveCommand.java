@@ -6,9 +6,18 @@ import frc.robot.subsystems.DriveTrain;
 
 public class DefaultDriveCommand extends CommandBase {
     public CommandXboxController xboxcontroller;
-    public DriveTrain xboxdrive;
+    public DriveTrain driveTrain;
     
     
-    
+    public DefaultDriveCommand(DriveTrain dtrain, CommandXboxController controller) {
+        driveTrain = dtrain;
+        xboxcontroller = controller;
+    }
+
+    @Override
+    public void execute() {
+        driveTrain.drive(xboxcontroller.getLeftX(),xboxcontroller.getLeftY());
+        
+    }
     
 }
