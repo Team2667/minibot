@@ -16,4 +16,6 @@ public final class Constants {
   public static int ldrivetrainmotor = 3;
   public static int rdrivetrainmotor = 4;
   public static int kDriverControllerPort = 0;
+  public static int armMotorId = 10;
+
 }
