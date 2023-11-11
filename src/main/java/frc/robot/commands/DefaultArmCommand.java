@@ -7,21 +7,28 @@ import frc.robot.subsystems.Arm;
 
 public class DefaultArmCommand extends CommandBase{
     private Arm turnyBit;
-    private CommandXboxController trigger;
-    public DefaultArmCommand(Arm turnyBit, CommandXboxController trigger) {
+    private XboxController controller;
+    public DefaultArmCommand(Arm turnyBit, XboxController trigger) {
 		this.turnyBit=turnyBit;
-		this.trigger=trigger;
+		this.controller=trigger;
 		this.addRequirements(turnyBit);
 		this.turnyBit.setDefaultCommand(this);
 	}
 
 	public void execute(){
-		if (trigger.getRightTriggerAxis()!=0){
-			turnyBit.shpinArm(0.13);
-		}else if (trigger.getLeftTriggerAxis()!=0){
-			turnyBit.shpinArm(-0.13);
-		}else {
-			turnyBit.shpinArm(0);
-		}
+		int dPadDir = controller.getPOV();
+		switch(dPadDir){
+			case -1: turnyBit.stop();
+			break;
+
+			case 0: turnyBit.moveArm(0.1);
+			break;
+
+			case 180: turnyBit.moveArm(-0.1);
+			break;
+
+			default: turnyBit.stop();
+			break;
+	}
 	}
 }

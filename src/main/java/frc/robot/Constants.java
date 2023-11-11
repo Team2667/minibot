@@ -17,5 +17,5 @@ public final class Constants {
   public static int rdrivetrainmotor = 4;
   public static int kDriverControllerPort = 0;
   public static int armMotorId = 10;
-
+  public static int inMotorId = 20;
 }

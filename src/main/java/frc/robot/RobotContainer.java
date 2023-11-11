@@ -21,8 +21,8 @@ public class RobotContainer {
   private DefaultArmCommand defaultArmCommand;
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
-  private final CommandXboxController xbvCommandXboxController =
-      new CommandXboxController(Constants.kDriverControllerPort);
+  private final XboxController xbvCommandXboxController =
+      new XboxController(Constants.kDriverControllerPort);
 
   public void createCommands(){
     drivecommand = new DefaultDriveCommand(driveTrain, xbvCommandXboxController);

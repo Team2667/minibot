@@ -12,8 +12,8 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class Arm extends SubsystemBase{
-    private CANSparkMax armMotor = new CANSparkMax(Constants.ldrivetrainmotor, MotorType.kBrushless);
-    public void shpinArm(double shpinSpd) { //makes it go
+    private CANSparkMax armMotor = new CANSparkMax(Constants.armMotorId, MotorType.kBrushless);
+    public void moveArm(double shpinSpd) { //makes it go
         armMotor.set(shpinSpd);
     }  
     public void stop() {//makes it not go
