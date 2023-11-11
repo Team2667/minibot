@@ -18,4 +18,11 @@ public final class Constants {
   public static int kDriverControllerPort = 0;
   public static int armMotorId = 10;
   public static int inMotorId = 20;
+
+  public static int armRestPosition = 0;
+  public static int armPickupPosition = 10;
+  public static int armVariance = 2;
+
+  public static int intakeCubeInVelosity = 1000;
+  public static int intakeCubeOutVelosity = 1500;
 }
